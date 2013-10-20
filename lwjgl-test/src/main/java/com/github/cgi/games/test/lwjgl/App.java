@@ -12,6 +12,14 @@ import org.lwjgl.opengl.GL11;
 public class App 
 {
     public void start() {
+        
+        // Создаем массив 
+        Quad[] qArray = new Quad[2];
+        
+        qArray[0] = new Quad(100,100, 200);
+        
+        qArray[1] = new Quad(400,100, 200);
+        
         try {
 	    Display.setDisplayMode(new DisplayMode(800,600));
 	    Display.create();
@@ -32,20 +40,10 @@ public class App
 		
 	    // set the color of the quad (R,G,B,A)
 	    GL11.glColor3f(0.5f,0.5f,1.0f);
-	    	
-	    // draw quad
-	    GL11.glBegin(GL11.GL_QUADS);
-	        GL11.glVertex2f(100,100);
-		GL11.glVertex2f(100+200,100);
-		GL11.glVertex2f(100+200,100+200);
-		GL11.glVertex2f(100,100+200);
-
-                
-	        GL11.glVertex2f(400,100);
-		GL11.glVertex2f(400+200,100);
-		GL11.glVertex2f(400+200,100+200);
-		GL11.glVertex2f(400,100+200);
-            GL11.glEnd();
+            
+            for(Quad q: qArray){
+                q.paint();
+            }
  
 	    Display.update();
 	}
