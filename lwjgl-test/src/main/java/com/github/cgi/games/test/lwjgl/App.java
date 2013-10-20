@@ -39,7 +39,13 @@ public class App
 		GL11.glVertex2f(100+200,100);
 		GL11.glVertex2f(100+200,100+200);
 		GL11.glVertex2f(100,100+200);
-	    GL11.glEnd();
+
+                
+	        GL11.glVertex2f(400,100);
+		GL11.glVertex2f(400+200,100);
+		GL11.glVertex2f(400+200,100+200);
+		GL11.glVertex2f(400,100+200);
+            GL11.glEnd();
  
 	    Display.update();
 	}
